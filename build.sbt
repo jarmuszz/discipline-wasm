@@ -12,6 +12,8 @@ ThisBuild / startYear := Some(2013)
 
 ThisBuild / tlJdkRelease := Some(8)
 
+ThisBuild / resolvers += "central-snapshots" at "https://central.sonatype.com/repository/maven-snapshots/"
+
 lazy val discipline = tlCrossRootProject.aggregate(core)
 
 lazy val core = crossProject(JSPlatform, JVMPlatform, NativePlatform)
@@ -20,7 +22,7 @@ lazy val core = crossProject(JSPlatform, JVMPlatform, NativePlatform)
   .settings(
     name := "discipline",
     moduleName := "discipline-core",
-    libraryDependencies += "org.scalacheck" %%% "scalacheck" % "1.19-WASM"
+    libraryDependencies += "org.scalacheck" %%% "scalacheck" % "1.19.0-75-f7176ff-SNAPSHOT"
   )
   .jsSettings(
     tlVersionIntroduced ~= {
