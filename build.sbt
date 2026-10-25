@@ -1,4 +1,4 @@
-ThisBuild / version := "1.7-WASM"
+ThisBuild / version := "1.7.0-WASM"
 
 ThisBuild / developers := List(
   tlGitHubDev("larsrh", "Lars Hupel")
@@ -22,7 +22,7 @@ lazy val core = crossProject(JSPlatform, JVMPlatform, NativePlatform)
   .settings(
     name := "discipline",
     moduleName := "discipline-core",
-    libraryDependencies += "org.scalacheck" %%% "scalacheck" % "1.20.0"
+    libraryDependencies += "org.scalacheck" %%% "scalacheck" % "1.20.0-WASM"
   )
   .jsSettings(
     tlVersionIntroduced ~= {
